@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>학생 과제제출 관리</title>
+    <title>학생 출석체크 및 과제제출 관리</title>
     <style>
         * {
             margin: 0;
@@ -849,7 +849,7 @@
             </div>
             <div class="modal-form">
                 <input type="text" id="taskName" class="modal-input" placeholder="과제 이름 (예: 수학 숙제, 과학 보고서)">
-                <input type="text" id="taskIcon" class="modal-input" placeholder="아이콘 (이모지 1개, 예: 📖, 🧮, 🔬)" maxlength="2">
+                <input type="text" id="taskIcon" class="modal-input" placeholder="아이콘 (예: 📖, 🧮, 🔬, 미입력 시 기본 아이콘)" maxlength="2">
             </div>
             <div class="modal-buttons">
                 <button class="modal-btn secondary" onclick="closeAddTaskModal()">취소</button>
@@ -1327,6 +1327,7 @@
             updateDynamicTasks();
             updateAllTasksOrder();
             createDynamicTaskContent(newTask);
+            updateDynamicTaskButtons(); // 새로 추가된 과제의 학생 버튼들을 생성
             saveToStorage();
             closeAddTaskModal();
 
@@ -1849,7 +1850,6 @@
         // 앱 시작
         window.addEventListener('DOMContentLoaded', initializeApp);
 
-        // ...existing code...
     </script>
 </body>
 </html>
